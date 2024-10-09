@@ -24,11 +24,11 @@ const HeroSection = () => {
               sequence={[
                 "Chezbro",
                 1000,
-                "Builder",
+                "a builder",
                 1000,
-                "Curious",
+                "that's sharing",
                 1000,
-                "Entrepreneur",
+                "ideas in public",
                 1000,
               ]}
               wrapper="span"
@@ -40,12 +40,12 @@ const HeroSection = () => {
             I'm publishing my software ideas to see which ones I should build and which I should bury.
           </p>
           <div>
-            <Link
+            {/* <Link
               href="/#contact"
               className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white"
             >
               Hire Me
-            </Link>
+            </Link> */}
 
           </div>
         </motion.div>
