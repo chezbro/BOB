@@ -128,10 +128,10 @@ const ProjectsSection = () => {
   return (
     <section id="projects">
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
-        Idea Thunderdome
+        Explore Top Ideas
       </h2>
       <p className="text-center text-xl text-[#ADB7BE] mb-8">
-        Two ideas enter, one idea leaves. You decide!
+        Vote for your favorite projects and help shape the future!
       </p>
       <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
         <ProjectTag
