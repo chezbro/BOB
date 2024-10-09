@@ -15,38 +15,36 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
         >
-          <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
+          <h1 className="text-white mb-4 text-3xl sm:text-4xl lg:text-6xl lg:leading-normal font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
-              Hello, I&apos;m{" "}
+              Hi, I'm Chezbro!
             </span>
             <br></br>
             <TypeAnimation
               sequence={[
-                "Chezbro",
+                "Help me decide",
                 1000,
-                "a builder",
+                "What to build",
                 1000,
-                "that's sharing",
-                1000,
-                "ideas in public",
+                "And what to bury",
                 1000,
               ]}
               wrapper="span"
               speed={50}
               repeat={Infinity}
+              className="text-2xl sm:text-3xl lg:text-5xl"
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-            I'm publishing my software ideas to see which ones I should build and which I should bury.
+            Welcome to my brain dump! Help me separate the gold from the garbage.
           </p>
           <div>
-            {/* <Link
-              href="/#contact"
+            <Link
+              href="/#projects"
               className="px-6 inline-block py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-primary-500 to-secondary-500 hover:bg-slate-200 text-white"
             >
-              Hire Me
-            </Link> */}
-
+              Vote on Ideas
+            </Link>
           </div>
         </motion.div>
         <motion.div

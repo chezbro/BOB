@@ -13,6 +13,9 @@ const projectsData = [
     tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
+    upvotes: 0,
+    downvotes: 0,
+    userVote: null, // Add this line to track user's vote
   },
   {
     id: 2,
@@ -22,6 +25,9 @@ const projectsData = [
     tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
+    upvotes: 0,
+    downvotes: 0,
+    userVote: null, // Add this line to track user's vote
   },
   {
     id: 3,
@@ -31,6 +37,9 @@ const projectsData = [
     tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
+    upvotes: 0,
+    downvotes: 0,
+    userVote: null, // Add this line to track user's vote
   },
   {
     id: 4,
@@ -40,6 +49,9 @@ const projectsData = [
     tag: ["All", "Mobile"],
     gitUrl: "/",
     previewUrl: "/",
+    upvotes: 0,
+    downvotes: 0,
+    userVote: null, // Add this line to track user's vote
   },
   {
     id: 5,
@@ -49,6 +61,9 @@ const projectsData = [
     tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
+    upvotes: 0,
+    downvotes: 0,
+    userVote: null, // Add this line to track user's vote
   },
   {
     id: 6,
@@ -58,11 +73,15 @@ const projectsData = [
     tag: ["All", "Web"],
     gitUrl: "/",
     previewUrl: "/",
+    upvotes: 0,
+    downvotes: 0,
+    userVote: null, // Add this line to track user's vote
   },
 ];
 
 const ProjectsSection = () => {
   const [tag, setTag] = useState("All");
+  const [projects, setProjects] = useState(projectsData);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -70,7 +89,34 @@ const ProjectsSection = () => {
     setTag(newTag);
   };
 
-  const filteredProjects = projectsData.filter((project) =>
+  const handleVote = (projectId, voteType) => {
+    setProjects(prevProjects =>
+      prevProjects.map(project => {
+        if (project.id === projectId) {
+          if (project.userVote === voteType) {
+            // If user clicks the same vote type, remove the vote
+            return {
+              ...project,
+              [voteType + 's']: project[voteType + 's'] - 1,
+              userVote: null
+            };
+          } else {
+            // If user changes vote or votes for the first time
+            const oppositeVote = voteType === 'upvote' ? 'downvote' : 'upvote';
+            return {
+              ...project,
+              [voteType + 's']: project[voteType + 's'] + 1,
+              [oppositeVote + 's']: project.userVote === oppositeVote ? project[oppositeVote + 's'] - 1 : project[oppositeVote + 's'],
+              userVote: voteType
+            };
+          }
+        }
+        return project;
+      })
+    );
+  };
+
+  const filteredProjects = projects.filter((project) =>
     project.tag.includes(tag)
   );
 
@@ -82,8 +128,11 @@ const ProjectsSection = () => {
   return (
     <section id="projects">
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
-        Software Ideas
+        Idea Thunderdome
       </h2>
+      <p className="text-center text-xl text-[#ADB7BE] mb-8">
+        Two ideas enter, one idea leaves. You decide!
+      </p>
       <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
         <ProjectTag
           onClick={handleTagChange}
@@ -111,12 +160,8 @@ const ProjectsSection = () => {
             transition={{ duration: 0.3, delay: index * 0.4 }}
           >
             <ProjectCard
-              key={project.id}
-              title={project.title}
-              description={project.description}
-              imgUrl={project.image}
-              gitUrl={project.gitUrl}
-              previewUrl={project.previewUrl}
+              project={project}
+              onVote={handleVote}
             />
           </motion.li>
         ))}
