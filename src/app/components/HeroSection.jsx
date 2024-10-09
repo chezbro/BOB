@@ -22,13 +22,13 @@ const HeroSection = () => {
             <br></br>
             <TypeAnimation
               sequence={[
-                "Judy",
+                "Chezbro",
                 1000,
-                "Web Developer",
+                "Builder",
                 1000,
-                "Mobile Developer",
+                "Curious",
                 1000,
-                "UI/UX Designer",
+                "Entrepreneur",
                 1000,
               ]}
               wrapper="span"
@@ -37,8 +37,7 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam,
-            voluptuous.
+            I'm publishing my software ideas to see which ones I should build and which I should bury.
           </p>
           <div>
             <Link
