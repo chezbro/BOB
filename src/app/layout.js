@@ -9,9 +9,8 @@ const pacifico = Pacifico({
 })
 
 export const metadata = {
-  metadataBase: new URL('https://www.buildorbury.com'),
   title: 'BUILD OR BURY',
-  description: 'Vote on innovative project ideas and help shape the future of technology.',
+  description: 'projects made w/♥',
 }
 
 export default function RootLayout({ children }) {
