@@ -126,12 +126,12 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects">
+    <section id="projects" aria-label="Project Ideas">
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
-        Explore Top Ideas
+        Explore Top Project Ideas
       </h2>
       <p className="text-center text-xl text-[#ADB7BE] mb-8">
-        Vote for your favorite projects and help shape the future!
+        Vote for your favorite projects and help shape the future of technology and innovation!
       </p>
       <div className="text-white flex flex-row justify-center items-center gap-2 py-6">
         <ProjectTag

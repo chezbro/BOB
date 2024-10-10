@@ -17,12 +17,12 @@ const HeroSection = () => {
         >
           <h1 className="text-white mb-4 text-3xl sm:text-4xl lg:text-6xl lg:leading-normal font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
-              Hi, I'm Chezbro!
+              Vote on Innovative Project Ideas
             </span>
             <br></br>
             <TypeAnimation
               sequence={[
-                "Help me decide",
+                "Help us decide",
                 1000,
                 "What to build",
                 1000,
@@ -36,7 +36,7 @@ const HeroSection = () => {
             />
           </h1>
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
-            Welcome to my brain dump! Help me separate the gold from the garbage.
+            Explore cutting-edge project ideas and help shape the future of technology and innovation.
           </p>
           <div>
             <Link
